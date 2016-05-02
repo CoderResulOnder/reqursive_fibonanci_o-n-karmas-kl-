@@ -1,0 +1,33 @@
+#include <iostream>
+int sayac=0;
+using namespace std;
+long long int fibonanci_hesapla(int n, long long int a, long long int b)
+{
+	sayac++;
+  if (n == 0) 
+  {
+  cout<<"sayac="<<sayac<<endl;
+  	return a;
+  	
+  }
+ if (n == 1) 
+  {
+  	cout<<"sayac="<<sayac<<endl;
+  	return b;
+  	
+  }
+  return fibonanci_hesapla(n - 1, b, a + b);
+}
+
+int main ()
+{
+  int n;
+  while (1) 
+  {
+    std::cout << "Aranan Fibonaci degerini giriniz: ";
+    std::cin >> n;
+    if (n > 0) 
+      std::cout << "Sonuc:" << fibonanci_hesapla(n, 0, 1) << std::endl;
+  }
+  return 0;
+}
